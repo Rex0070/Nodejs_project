@@ -1,0 +1,19 @@
+<%# 로그인 결과 반환 %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <% if(l_result == false) {
+        %>
+        <script type = "text/javascript">
+            alert("Email or Password is incorrect");
+            history.go(-1);
+        </script>
+        <%
+        }
+        %>
+</body>
+</html>

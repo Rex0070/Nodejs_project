@@ -1,0 +1,230 @@
+<%# 메인페이지 %>
+<!DOCTYPE html>
+<html lang="en">
+<style>
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:800&display=swap%27');
+
+<%# 버튼 스타일 %>
+* {
+  padding: 0;
+  margin: 0;
+  
+}
+
+body {
+  background: #141926;
+}
+
+.outer {
+  position: relative;
+  margin: auto;
+  width: 85px;
+  margin-top: 10px;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.inner {
+  width: inherit;
+  text-align: center;
+}
+
+label { 
+  font-size: .8em; 
+  line-height: 4em;
+  text-transform: uppercase;
+  color: #fff;
+  transition: all .3s ease-in;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.inner:before, .inner:after {
+  position: absolute;
+  content: '';
+  height: 1px;
+  width: inherit;
+  background: #FFC107;
+  left: 0;
+  transition: all .3s ease-in;
+}
+
+.inner:before {
+  top: 50%; 
+  transform: rotate(45deg);  
+}
+
+.inner:after {  
+  bottom: 50%;
+  transform: rotate(-45deg);  
+}
+
+.outer:hover label {
+  opacity: 1;
+}
+
+.outer:hover .inner:before,
+.outer:hover .inner:after {
+  transform: rotate(0);
+}
+
+.outer:hover .inner:before {
+  top: 0;
+}
+
+.outer:hover .inner:after {
+  bottom: 0;
+}
+
+.btn{
+  overflow: hidden;
+}
+
+.btn:after {
+  /*background-color: #f00;*/
+  height: 100%;
+  left: -35%;
+  top: 0;
+  transform: skew(50deg);
+  transition-duration: 0.6s;
+  transform-origin: top left;
+  width: 0;
+}
+
+.btn:hover:after {
+  height: 100%;
+  width: 135%;
+}
+
+.lbtn{
+    border:0;
+    outline:0;
+}
+a{text-decoration: none;}
+
+input[type=button]{
+    all:unset;
+
+}
+
+<%# 글씨 스타일_Clock %>
+
+body {
+  background: #000;
+  min-height: 100%;
+  overflow: hidden;
+  color:white;
+}
+
+h1 {
+  display: inline-block;
+  margin: 0 auto;
+  font-weight: 900;
+  text-align:center;
+  text-transform: uppercase;
+  font-size: 10vw;
+  line-height: 120%;
+  padding: 20px 0;
+  font-color:white;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+span {
+  display: block;
+}
+span:nth-child(1) {
+  font-size: 214%;
+  line-height: 85%;
+  text-indent: -0.33em;
+}
+span:nth-child(2) {
+  font-size: 292%;
+  line-height: 69%;
+  word-spacing: -0.2em;
+  text-indent: -0.07em;
+}
+
+@keyframes background {
+  0%{background-position:0% 50%}
+  100%{background-position:100% 50%}
+}
+
+<%# 글씨 스타일_Login_Succesful %>
+
+#neon h2 {
+	text-align: center;
+	margin: 30px auto;
+	font-family: "Museo";
+	font-size: 13px; text-transform: uppercase;
+	color: #fff;
+	text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+}
+
+
+<%# 그림 스타일_날씨 %>
+
+.wimg{
+
+    position:relative;
+    top:170px;
+    text-align:center;
+  
+
+}
+
+<%# 오늘의 할일 %>
+.wwd{
+    font-size: 1.5vw;
+    text-align:center;
+    padding-top:200px;
+
+}
+
+</style>
+<head>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <meta charset="UTF-8">
+    <link rel = "stylesheet" type="text/css" href="/public/index.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="neon">
+        <h2>LogIn Succesful</h2>
+    </div>
+
+    <div class="outer">
+  <div class="inner">
+        <div class="lbtn"><label><a href ="/logout.ejs" class="btn"><input type="button" value="Logout"></a></label></div>
+  </div>
+</div>
+    <p class="wwd">
+        Today, what will you do
+        <span id = "test" width="40px" style="opacity: 1">GSM</span>
+        thing?
+    </p>
+
+        <div class="wimg">
+            <img id = "img"  src="">
+            <span class = "js-weather"></span><br>
+            <input type = "text" id="sc" readonly="true">
+        </div>
+
+        
+    <div class="js-clock">
+        <div class="logo">
+          <h1><span>00:00</span></h1>
+        </div>
+    </div>
+
+        <script src = "/script/test.js"></script>
+        <script src = "/script/text.js"></script>
+        <%# <ul class = "js-toDoList"></ul> %>
+        <script src = "/script/weather.js"></script>
+        <%# <script src = "/script/todo.js"></script> %>
+        <script src = "/script/clock.js"></script>
+        <script src = "/script/bg.js"></script>
+</body>
+</html>
