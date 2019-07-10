@@ -8,9 +8,9 @@ const Arr_evening = new Array('Good Evening,');
 function paintText(textnumber){
     const date = new Date();
     const hours = date.getHours();
-    if(hours > 12){
+    if(hours > 12 && hours < 18){
         INPUT.value = Arr_afternoon[0];
-    } else if(hours > 18 ){
+    } else if(hours > 18 && hours < 24){
         INPUT.value = Arr_evening[0];
     } else {
         INPUT.value = Arr_morning[0];
