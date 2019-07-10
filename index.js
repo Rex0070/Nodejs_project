@@ -34,12 +34,11 @@ app.get('/', (req, res)=>{
     }
 });
 
-// create a connection variable with the required details
 var con = mysql.createConnection({
-  host: "localhost", // ip address of server running mysql
-  user: "root", // user name to your mysql database
-  password: "1234", // corresponding password
-  database: "mydb" // use the specified database
+  host: "localhost",
+  user: "root",
+  password: "1234", 
+  database: "mydb"
 });
 
 app.post('/join.html', (req, res)=>{
@@ -74,7 +73,6 @@ app.post('/main.ejs', (req, res, event)=>{
                     con.query("SELECT name FROM register where id = ?", [req.body.id],
                         (err, result)=>{
                             if(err) res.send(message(err));
-                            // else res.render(__dirname + '/views/main.ejs', {na : result[0].name});
                             else res.sendFile(__dirname + '/views/main.html');
                         }
                     )
@@ -108,21 +106,6 @@ app.post('/main.ejs', (req, res, event)=>{
             if(err) console.log(err.message);
         })
     })
-
-// app.post('/redirect', (req, res)=>{
-//     var body = req.body;
-//     con.query("INSERT INTO todo (todo) VALUES(?)",
-//     [body.todo]),
-//     (err, result)=>{
-//         if(err) console.log(`insert error : ${err.message}`);
-//         else{
-//             res.redirect('/');
-//         }
-//     }
-// })
-// app.get(, (req,res)=>{
-//     res.render(__dirname + '/views/main.ejs');
-// })
 
 app.get('/logout.ejs', (req,res)=>{
     delete req.session.pw;
