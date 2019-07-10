@@ -6,9 +6,17 @@
 
 <style rel="stylesheet">
 body {
-   font: 13px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+   font: 13px/20px '나눔스퀘어라운드 Bold', sans-serif;
    color: #333333;
-   background: lightskyblue;
+}
+
+.bg{
+   position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index: -1;
 }
 
 .signUp {
@@ -17,10 +25,9 @@ body {
    width: 280px;
    padding: 33px 25px 29px;
    background: #FFFFFF;
-   border-bottom: 1px solid #C4C4C4;
-   border-radius: 5px;
+   border-radius: 10px;
    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
-   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25)
 }
 
 .signUp:before,
@@ -32,12 +39,11 @@ body {
    right: 0;
    height: 10px;
    background: inherit;
-   border-bottom: 1px solid #D2D2D2;
    border-radius: 4px;
 }
 
 .signUp:after {
-   bottom: 3px;
+   /* bottom: 3px; */
    border-color: #DCDCDC;
 }
 
@@ -50,7 +56,6 @@ body {
    color: #777;
    text-align: center;
    text-shadow: 0 1px rgba(255, 255, 255, 0.75);
-   background: #F7F7F7;
 }
 
 .signUpTitle:before {
@@ -60,12 +65,7 @@ body {
    left: 0;
    right: 0;
    height: 8px;
-   background: #C4E17F;
    border-radius: 5px 5px 0 0;
-   background-image: -webkit-linear-gradient(left, #C4E17F, #C4E17F 12.5%, #F7FDCA 12.5%, #F7FDCA 25%, #FECF71 25%, #FECF71 37.5%, #F0776C 37.5%, #F0776C 50%, #DB9DBE 50%, #db9CBE 62.5%, #C49CDE 62.5%, #C49CDE 75%, #669AE1 75%, #669AE1 87.5%, #62C2E4 87.5%, #62C2E4);
-   background-image: -moz-linear-gradient(left, #c4e17f, #C4E17F 12.5%, #F7FDCA 12.5%, #F7FDCA 25%, #FECF71 25%, #FECF71 37.5%, #F0776C 37.5%, #F0776C 50%, #DB9DBE 50%, #DB9CBE 62.5%, #C49CDE 62.5%, #C49CDE 75%, #669AE1 75%, #669AE1 87.5%, #62C2E4 87.5%, #62C2E4);
-   background-image: -o-linear-gradient(left, #C4E17F, #C4E17F 12.5%, #F7FDCC 12.5%, #F7FDCA 25%, #FECF71 25%, #FECF71 37.5%, #F0776C 37.5%, #F0776C 50%, #DB9DBE 50%, #DB9DBE 62.5%, #C49CDE 62.5%, #C49CDE 75%, #669AE1 75%, #669AE1 87.5%, #62C2E4 87.5%, #62C2E4);
-   background-image: linear-gradient(to right, #C4E17F, #C4E17F 12.5%, #F7FDCA 12.5%, #F7FDCA 25%, #FECF71 25%, #FECF71 37.5%, #F0776C 37.5%, #F0776C 50%, #DB9DBE 50%, #DB9CBE 62.5%, #c49cde 62.5%, #C49CDE 75%, #669AE1 75%, #669AE1 87.5%, #62c2e4 87.5%, #62C2E4);
 }
 
 input {
@@ -83,17 +83,16 @@ input {
    padding: 0 15px 2px;
    font-size: 17px;
    background: white;
-   border: 2px solid #EBEBEB;
-   border-radius: 4px;
-   -webkit-box-shadow: inset 0 -2px #EBEBEB;
-   box-shadow: inset 0 -2px #EBEBEB;
+   border : none;
+   box-shadow: 0px 0px 5px 5px rgb(226, 225, 225);
+   border-radius: 10px;
 }
 
 .signUpInput:focus {
-   border-color: #62C2E4;
+   /* border-color; */
    outline: none;
-   -webkit-box-shadow: inset 0 -2px #62C2E4;
-   box-shadow: inset 0 -2px #62C2E4;
+   /* -webkit-box-shadow: inset 0 -2p; */
+   /* box-shadow: inset 0 -2p; */
 }
 
 .lt-ie9 .signUpInput {
@@ -110,13 +109,13 @@ input {
    color: white;
    text-align: center;
    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-   background: #F0776C;
+   background: lightcoral;
    border: 0;
-   border-bottom: 2px solid #D76B60;
-   border-radius: 5px;
+   border-bottom: 2px solid lightcoral;
+   border-radius: 20px;
    cursor: pointer;
-   -webkit-box-shadow: inset 0 -2px #D76B60;
-   box-shadow: inset 0 -2px #D76B60;
+   -webkit-box-shadow: inset 0 -2px lightcoral;
+   /* box-shadow: inset 0 -2px lightcoral; */
 }
 
 .signUpButton:active {
@@ -159,14 +158,14 @@ input {
 </style>
 </head>
 <body>
-
-<form action="" method="POST" class="signUp" id="signupForm">
-   <h1 class="signUpTitle">Sign up in seconds</h1>
-   <input type="text" name = "na" class = "signUpInput" placeholder="이름을 입력해주세요" autocomplete="off" autofocus required>
-   <input type="text" name = "id" class="signUpInput" placeholder="아이디를 입력해주세요" autocomplete="off" required>
-   <input type="password" name = "pw" class="signUpInput" placeholder="비밀번호를 입력해주세요" required>
+<img src="../public/bg.jpg" class = "bg" alt="">
+<form action="/join.html" method="POST" class="signUp" id="signupForm">
+   <h1 class="signUpTitle">Sign in</h1>
+   <input type="text" name = "na" class = "signUpInput" placeholder="User name" autocomplete="off" autofocus required>
+   <input type="text" name = "id" class="signUpInput" placeholder="id" autocomplete="off" required>
+   <input type="password" name = "pw" class="signUpInput" placeholder="password" required>
    <p><a href="new_login.html" class = "link">"Have account?"</a></p>
-   <input type="submit" value="Sign me up!" class="signUpButton">
+   <input type="submit" value="SIGN ME!" class="signUpButton">
 </form>
 
 <script>
